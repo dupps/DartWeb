@@ -1,7 +1,7 @@
 part of dart_web;
 
 class Controller {
-	abstract void handle(HttpRequest request);
+	void handle(HttpRequest request);
 }
 
 class TestController {

@@ -1,6 +1,8 @@
 name: dart_web
 version: 0.1.0
-author: Axel Christ <adracus@gmx.de>
+author:
+  - Axel Christ <adracus@gmx.de>
+  - Bastian Dupps <bastian@dupps.it>
 description: A dart web server and more
 dependencies:
   args: any

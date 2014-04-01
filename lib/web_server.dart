@@ -9,7 +9,8 @@ class WebServer {
 
 	void start(void router(String path, Map handles, HttpRequest request)) {
 		if (DartWebSettings.isDevelopMode()) {
-			log('Starting server at $_address:$_port');
+			log("Operating system ${Platform.operatingSystem} detected");
+			log("Starting server at $_address:$_port");
 		}
 		HttpServer.bind(_address, _port).then((server) {
 			server.listen((HttpRequest request) {

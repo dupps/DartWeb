@@ -18,7 +18,7 @@ void main(List<String> arguments) {
 
 	DartWebSettings.parseMode(env);
 	TestController cont = new TestController();
-	Router router = new Router();
+	Router router = new Router(new DefaultController());
 	router.addHandle("/", cont.handle);
 	WebServer server = new WebServer(host, port, router.getHandles());
 	server.start(router.route);

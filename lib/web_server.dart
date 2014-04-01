@@ -17,7 +17,7 @@ class WebServer {
 
 	void start(void router(String path, Map handles, HttpRequest request)) {
 		if (isDevelopMode()) {
-			print('Server started at $_address:$_port');
+			print('Starting server at $_address:$_port');
 		}
 		HttpServer.bind(_address, _port).then((server) {
 			server.listen((HttpRequest request) {

@@ -1,1 +1,1 @@
-web: /app/dart-sdk/bin/dart dart_web.dart --port $PORT
+web: /app/dart-sdk/bin/dart bin/dserv.dart --port $PORT

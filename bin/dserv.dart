@@ -1,23 +1,20 @@
-library dart_web;
+import 'dart:core';
 
-import 'dart:io';
+import 'package:args/args.dart';
+import 'package:dart_web/dart_web.dart';
 
-part 'route.dart';
-part 'web_server.dart';
-part 'controller.dart';
-
-
-void main() {
-	ArgParser parser = new ArgParser();
+void main(List<String> arguments) {
+	var parser = new ArgParser();
 	parser
 	..addOption('port', defaultsTo: '8080')
 	..addOption('host', defaultsTo: '0.0.0.0');
 
-	List<String> argv = (new Options()).arguments;
-	var opts = parser.parse(argv);
+	var opts = parser.parse(arguments);
 
 	var host = opts["host"];
-	var port = opts["port"];
+	var port = int.parse(opts["port"]);
+	print("Host is $host");
+	print("Port is $port");
 
 	TestController cont = new TestController();
 	Map handles = new Map();

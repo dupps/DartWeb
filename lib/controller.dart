@@ -1,6 +1,6 @@
 part of dart_web;
 
-class Controller {
+abstract class Controller {
 	void handle(HttpRequest request);
 }
 

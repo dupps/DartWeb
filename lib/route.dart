@@ -4,8 +4,9 @@ typedef void Handler(String method, HttpRequest request, Map<String, String> arg
 
 class Router {
 	Map<String, Handler> _handles;
+	Controller _defaultController;
 
-	Router() {
+	Router(this._defaultController) {
 		this._handles = new Map<String, Handler>();
 	}
 
@@ -24,13 +25,7 @@ class Router {
 		if (handles[uri.path] != null && handles[uri.path] is Handler) {
 			handles[uri.path](request.method, request, request.uri.queryParameters);
 		} else {
-			request.response
-			..statusCode = HttpStatus.NOT_FOUND
-			..headers.add(HttpHeaders.CONTENT_TYPE, "text/html")
-			..write("<html><head><title>404 Not Found</title></head>")
-			..write("<body><h1>The requested content could not be found</h1></body>")
-			..write("</html>")
-			..close();	
+			this._defaultController.handle(request.method, request, request.uri.queryParameters);
 		}
 	}
 

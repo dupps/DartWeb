@@ -6,3 +6,4 @@ author:
 description: A dart web server and more
 dependencies:
   args: any
+  postgresql: any

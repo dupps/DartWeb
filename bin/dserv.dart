@@ -6,6 +6,7 @@ import 'package:args/args.dart';
 import 'package:dart_web/dart_web.dart';
 
 void main(List<String> arguments) {
+	CleanupManager.init();
 	var parser = new ArgParser();
 	parser
 	..addOption('port', defaultsTo: '8080')
@@ -22,6 +23,7 @@ void main(List<String> arguments) {
 	if (databaseUri != null && !(databaseUri.isEmpty)) {
 		DatabaseConnector.connectToPostgresDB(databaseUri).then((db) {
 			db.createTable("Test", {"about" : "text"});
+			//db.dropTable("Test");
 		});
 	}
 

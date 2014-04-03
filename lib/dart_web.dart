@@ -13,8 +13,4 @@ part 'web_server.dart';
 part 'controller.dart';
 part 'model.dart';
 part 'database.dart';
-
-void log(String msg) {
-	var date = (new DateTime.now()).toString();
-	print("[$date] " + msg);
-}
+part 'util.dart';
